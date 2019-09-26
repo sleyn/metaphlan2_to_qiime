@@ -4,7 +4,9 @@ Convert MetaPhlAn2 OTU abundance table format to QIIME format. Script set up to 
 ## Usage
 ### 1. Download NCBI taxonomy
 
-`collect_taxonomy.sh` script downloads a dump of current NCBI Taxonomy database, converts it to a `<Name>\t<TaxIDs>\t<Linage>` format and removes all non-bacterial and low-ranked items (currently everything which is above family level).
+`collect_taxonomy.sh` script downloads a dump of current NCBI Taxonomy database, converts it to a `<Name><TaxIDs><Linage>` table and removes all non-bacterial and low-ranked items (e.g TaxIDs for phylums or orders).
+
+Currently everything which is above family level is removed. Ranks that should be saved could be setted inside `convert_dmp.pl` script in `%keep_rank` hash.
 
 ### 2. Convert MetaPhlAn2 to QIIME forma
 
